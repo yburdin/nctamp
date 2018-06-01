@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Подбор арматуры</title> 
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'arm/css/bootstrap.min.css' %}" type = "text/css"/>
+	<link rel="stylesheet" href="{% static 'arm/css/sticky-footer.css' %}">
+	
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	
+	<style type="text/css">
+		html,
+		body {
+			height:90%
+		}
+	</style>	
+</head>
+
+<body class='body' style='background-color:#f6f6f6'>
+	<div class='container'>
+		<div class='page-header'>
+			<div class='row'>
+				<div class='col-xs-1'>
+					<br>
+					<a href='../' class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-home" aria-hidden="true"></span> </a>
+				</div>
+				
+				<div class='col-xs-10'>
+					<center>
+					<h1>Подбор арматуры</h1>
+					</center>
+					<br>
+				</div>
+			</div>
+		</div>
+		
+		<form action="/arm/" method="post" class='form-horizontal'>{% csrf_token %}
+			<div class="form-group">
+				<label for="id_1" class='col-xs-6 control-label'>Интенсивность армирования:</label>
+				<div class='col-xs-6'>
+					<input id="id_1" class='form-control' type="text" name="InputArea" placeholder='14.88' />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="id_2" class='col-xs-6 control-label'>Диаметр фоновой арматуры:</label>
+				<div class='col-xs-6'>
+					<input id="id_2" class='form-control' type="text" name="InputFonDiameter" placeholder='10' />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="id_3" class='col-xs-6 control-label'>Шаг фоновой арматуры:</label>
+				<div class='col-xs-6'>
+					<input id="id_3" class='form-control' type="text" name="InputFonSpacing" placeholder='200' />
+				</div>
+			</div>
+			
+			<div class='col-xs-12'>
+				<button type="submit" class='btn btn-primary btn-block'> Расчет </button>
+			</div>
+		</form>
+		
+		<table class='table table-striped'>
+			<thead>
+				<tr>
+					<th>Диаметры</th>
+					<th>Шаг</th>
+					<th>Интенсивность</th>
+					<th>Доля армирования</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{result|safe}}
+			</tbody>		
+		</table>
+		
+	</div>
+</body>
+
+</html>

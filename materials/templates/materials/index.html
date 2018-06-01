@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='ru'>
+
+<head>
+	<title>Материалы по ПНАЭ</title> 
+	{% load staticfiles %}
+	<script src="{% static 'materials/js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'materials/js/bootstrap.min.js' %} "></script>
+	
+	<link rel="stylesheet" href="{% static 'materials/css/bootstrap.min.css' %}">	
+	<link rel="stylesheet" href="{% static 'materials/css/bootstrap-select.min.css' %}">
+
+	<script src="{% static 'materials/js/bootstrap-select.min.js' %} "></script>
+	
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">		
+	<style type="text/css">
+		html,
+		body {
+			height:100%
+		}
+	</style>	
+</head>
+
+<body class='body' style='background-color:#f6f6f6'>
+	<div class='container'>
+		<div class='page-header'>
+			<div class='row'>
+				<div class='col-xs-1'>
+					<br>
+					<a href='../' class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-home" aria-hidden="true"></span> </a>
+				</div>
+				
+				<div class='col-xs-10'>
+					<center>
+					<h1>Материалы по ПНАЭ</h1>
+					</center>
+					<br>
+				</div>
+			</div>
+			<div class='row'>	
+				<center>
+					<form class="form-inline" action='/materials/' method='post'>
+					{% csrf_token %}
+						<div class="form-group">						
+							<div class='col-sm-4'>
+								<select class="selectpicker" data-live-search="true" name='marka' id='id_1'>
+									{{options|safe}}
+								</select>
+							</div>
+						</div>
+					  <button type="submit" class="btn btn-default">Выбрать</button> 
+					</form>
+				</center>
+			</div>
+		</div>
+		
+		<div class='container'>
+			<center>
+			<p>Примечание: КП490* &ndash; категория прочности, цифра &ndash; значение предела текучести при 20&deg;C,
+			КП490** &ndash; категория прочности, цифра &ndash; значение предела текучести при 300&deg;C </p>
+			{% load staticfiles %}			
+			{{steel_img|safe}}			
+			<p></p>
+			<p>Температурный коэффициент линейного расширения, мкК<sup>-1</sup></p>
+			{{alph_img|safe}}
+			<p></p>
+			<p>Модуль упругости, ГПа (10<sup>4</sup> кгс/мм<sup>2</sup>)</p>
+			{{young_img|safe}}
+			</center>
+		</div>
+	</div>
+<body>
+</html>

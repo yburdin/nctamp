@@ -1,0 +1,59 @@
+{% extends 'armcalc/index.html' %}
+
+{% block content %}
+{% load staticfiles %}
+<center>
+<img src="{% static 'armcalc/pictures/3.png' %}">
+</center>
+
+<br><br>
+
+<div class='col-sm-6'>
+	<form class="form-horizontal" action='/armcalc/l1' method='post'>
+	{% csrf_token %}
+		<div class="form-group">
+			<label for="id_1" class="col-sm-3 control-label">a</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" id="id_1" name='l1_a' style='width: 100px'>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_2" class="col-sm-3 control-label">b</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" id="id_2" name='l1_b' style='width: 100px'>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_3" class="col-sm-3 control-label">c</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" id="id_3" name='l1_c' style='width: 100px'>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_4" class="col-sm-3 control-label">Диаметр</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" id="id_4" name='l1_d' style='width: 100px'>
+			</div>
+		</div>
+
+	  <button type="submit" class="btn btn-default btn-block">Расчет</button> 
+	</form>
+</div>
+	
+<div class='col-sm-6'>
+	<table class='table table-striped'>
+		<thead>
+			<tr>
+				<th>Диаметр</th>
+				<th>Длина</th>
+				<th>Масса</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{l1_res|safe}}
+		</tbody>		
+	</table>
+</div>
+
+  
+{% endblock %}

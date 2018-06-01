@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>НЦТ АМП</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'personal/css/bootstrap.min.css' %}" type = "text/css"/>
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	
+	<style type="text/css">
+		html,
+		body {
+		  height:90%
+		}
+	</style>
+</head>
+
+<body class="body" style="background-color:#f6f6f6">
+	<div class="container-fluid" style="min-height:95%; ">
+		<div class="row">
+			  <div class="col-sm-12">
+				  <br>
+				  <center>
+				  <h1>НЦТ АМП</h1>
+				  </center>
+			  </div>
+		</div><hr>
+		
+		<div class="container" style="min-height:95%; ">
+			<div class='row'>		
+				<div class='col-sm-4'>
+					<a href="/arm" class="btn btn-success btn-lg btn-block" role="button">Подбор арматуры</a>
+				</div>	
+			
+				<div class='col-sm-4'>
+					<a href="/speka" class="btn btn-success btn-lg btn-block" role="button">Расчет спецификации</a>
+				</div>
+				
+				<div class='col-sm-4'>
+					<a href="/armcalc" class="btn btn-success btn-lg btn-block" role="button">Арматурные детали</a>
+				</div>
+			</div>
+			<br>
+			
+			<div class='row'>		
+				<div class='col-sm-4'>
+					<a href="/spectrum" class="btn btn-success btn-lg btn-block" role="button">Подготовка спектров</a>
+				</div>	
+				
+				<div class='col-sm-4'>
+					<a href="/materials" class="btn btn-success btn-lg btn-block" role="button">Материалы по ПНАЭ</a>
+				</div>	
+
+			</div>
+		</div>
+	</div>
+	
+</body>
+
+</html>
