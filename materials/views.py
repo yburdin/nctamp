@@ -127,7 +127,7 @@ def index(request):
         if form.is_valid():
             marka = form.cleaned_data['marka']
 
-            class_out = '<p>{} &ndash; {}</p>'.format(marka, CLASS_DICT[marka])
+            class_out = '<h3>{} &ndash; {}</h3>'.format(marka, CLASS_DICT[marka])
 
             img_src = '/static/materials/mats_pictures_png/' + westernize_mark(str(marka).lower()) + '.png'
             img_out = '<img src="' + img_src + '">'
