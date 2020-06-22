@@ -45,8 +45,9 @@ INSTALLED_APPS = [
     'armcalc',
     'spectrum',
     'materials',
-	'kvartira',
-	'colors',
+    'kvartira',
+    'colors',
+    'wind',
 ]
 
 MIDDLEWARE = [

@@ -19,13 +19,14 @@ from django.conf import settings
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^arm/', include('arm.urls')),
-    url(r'^$', include('personal.urls')),
-    url(r'^speka/', include('speka.urls')),
-    url(r'^armcalc/', include('armcalc.urls')),
-    url(r'^spectrum/', include('spectrum.urls')),
-    url(r'^materials/', include('materials.urls')),
-	url(r'^kvartira/', include('kvartira.urls')),
-	url(r'^colors/', include('colors.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                  url(r'^admin/', admin.site.urls),
+                  url(r'^arm/', include('arm.urls')),
+                  url(r'^$', include('personal.urls')),
+                  url(r'^speka/', include('speka.urls')),
+                  url(r'^armcalc/', include('armcalc.urls')),
+                  url(r'^spectrum/', include('spectrum.urls')),
+                  url(r'^materials/', include('materials.urls')),
+                  url(r'^kvartira/', include('kvartira.urls')),
+                  url(r'^colors/', include('colors.urls')),
+                  url(r'^wind/', include('wind.urls')),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
