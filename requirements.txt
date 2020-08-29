@@ -3,7 +3,7 @@ django-sendfile==0.3.11
 et-xmlfile==1.0.1
 gunicorn==19.7.1
 jdcal==1.4.1
-numpy==1.19.1
+numpy==1.18.5
 openpyxl==2.4.8
 pandas==1.1.1
 python-dateutil==2.8.1
