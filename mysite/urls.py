@@ -29,4 +29,5 @@ urlpatterns = [
                   url(r'^kvartira/', include('kvartira.urls')),
                   url(r'^colors/', include('colors.urls')),
                   url(r'^wind/', include('wind.urls')),
+                  url(r'^spectrum_v17/', include('spectrum_v17.urls')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

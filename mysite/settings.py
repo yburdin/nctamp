@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'kvartira',
     'colors',
     'wind',
+    'spectrum_v17',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Подготовка спектров для APM Structure3D v17</title>
+	{% load staticfiles %}
+	
+	<link rel="stylesheet" href="{% static 'spectrum_v17/css/bootstrap.min.css' %}" type = "text/css"/>
+	<link rel="stylesheet" href="{% static 'spectrum_v17/css/fileinput.min.css' %}" media="all" type="text/css" />
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="{% static 'spectrum_v17/js/fileinput.min.js' %}"></script>
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	
+	<style type="text/css">
+		html,
+		body {
+			height:90%
+		}
+	</style>	
+</head>
+
+<body class='body' style='background-color:#f6f6f6'>
+	<div class='container'>
+		<div class='page-header'>
+			<div class='row'>
+				<div class='col-xs-1'>
+					<br>
+					<a href='../' class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-home" aria-hidden="true"></span> </a>
+				</div>
+				
+				<div class='col-xs-10'>
+					<center>
+					<h1>Подготовка спектров для APM Structure3D v17</h1>
+					</center>
+				</div>
+			</div>
+		</div>
+	
+		<form action="/spectrum_v17/" method="post" class='form-horizontal' enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="form-group">
+				<label for="id_1" class='col-xs-3 control-label'>Выберите файл:</label>
+				<div class='col-xs-6'>
+					<input id="id_1" class='file' type="file" name="docfile" data-show-preview="false" />
+					<small id="file_help" class="form-text text-muted">Файл формата *.xlsx</small>
+				</div>
+
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>
