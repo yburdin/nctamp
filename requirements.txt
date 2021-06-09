@@ -1,4 +1,4 @@
-Django==2.2.15
+Django==2.2.22
 django-sendfile==0.3.11
 et-xmlfile==1.0.1
 gunicorn==19.7.1
